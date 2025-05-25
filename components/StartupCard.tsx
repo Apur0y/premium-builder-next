@@ -7,7 +7,7 @@ import React from "react";
 const StartupCard = ({ post }: { post: StractupTypeCard }) => {
   return (
     <li className="border-4 border-slate-800 rounded-lg  max-w-sm  p-2 flex flex-col gap-3">
-      <div className="flex justify-between bg-slate-300 px-4 rounded-lg ">
+      <div className="flex justify-between bg-red-300 px-4 py-1 rounded-lg ">
         <p>{formatDate(post?.createdAt)}</p>
 
         <div className="flex">

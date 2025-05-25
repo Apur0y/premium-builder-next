@@ -7,9 +7,24 @@ async function Navbar() {
   const session = await auth();
 
   return (
-    <header className="bg-white text-black p-4 font-work-sans">
+    <header className="bg-white text-black p-4 font-work-sans fixed w-full">
       <nav className="container mx-auto flex justify-between items-center">
         <Link className="font-bold" href="/">BuilderZ</Link>
+
+        <div className="flex gap-5 font-semibold">
+             <Link href="/create-projects">
+              Create Project
+              </Link>
+             <Link href="/create-projects">
+              Find One
+              </Link>
+             <Link href="/about">
+             About
+              </Link>
+             <Link href="/create-projects">
+              Contact
+              </Link>
+        </div>
 
         <div >
           {session && session?.user ? (
@@ -23,9 +38,7 @@ async function Navbar() {
               }}
               className="flex gap-5"
             >
-              <Link href="/crete-project">
-              Create Project
-              </Link>
+           
 
                 <Link href={`/profile/${session?.user?.id}`}>
               <span>{session?.user?.name}</span>
@@ -45,6 +58,8 @@ async function Navbar() {
             </form>
           )}
         </div>
+
+
       </nav>
     </header>
   );

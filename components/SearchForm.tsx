@@ -9,7 +9,7 @@ export default function SearchForm({ query }: { query?: string }) {
         name="query"
         defaultValue={query}
         placeholder="Search Srartups"
-        className="text-black px-4 py-2 rounded-full font-semibold"
+        className="text-black px-5 py-4 rounded-full  font-semibold"
       />
 
       <div className="absolute  top-1/2 translate-x-36 -translate-y-4 flex gap-3">
