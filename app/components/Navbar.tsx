@@ -7,22 +7,31 @@ async function Navbar() {
   const session = await auth();
 
   return (
-    <header className="bg-gray-800 text-white p-4 font-work-sans">
+    <header className="bg-white text-black p-4 font-work-sans">
       <nav className="container mx-auto flex justify-between items-center">
-        <Link href="/">BuilderMe</Link>
+        <Link className="font-bold" href="/">BuilderMe</Link>
 
-        <div>
+        <div >
           {session && session?.user ? (
             <div>
-              <Link href="/">Create Project</Link>
+             
 
             <form
               action={async () => {
                 "use server";
                 await signOut({ redirectTo: "/" });
               }}
+              className="flex gap-5"
             >
-              <button type="submit">LogOut</button>
+              <Link href="/crete-project">
+              Create Project
+              </Link>
+
+                <Link href={`/profile/${session?.user?.id}`}>
+              <span>{session?.user?.name}</span>
+              </Link>
+              <button className="py-1 px-3 bg-sky-600 rounded-lg" type="submit">LogOut</button>
+            
             </form>
             </div>
           ) : (
