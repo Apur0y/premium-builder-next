@@ -5,7 +5,7 @@ const page = async() => {
 
   const dataType = dbConnect("items");
   const data =await dataType.find({}).toArray()
-  console.log(data);
+ 
     return (
         <div className='pt-24'>
           {

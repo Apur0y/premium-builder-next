@@ -1,4 +1,5 @@
 import dbConnect from "@/lib/dbConnect";
+import Link from "next/link";
 
 const About = async () => {
   const serviceCollection = dbConnect("services");
@@ -29,9 +30,12 @@ const About = async () => {
             <p className="text-gray-600 line-clamp-3">{service.description}</p>
 
             {/* CTA button that appears on hover */}
-            <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-4 px-6 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full text-sm font-medium shadow-md hover:shadow-lg">
+            <Link href={`/about/${service._id}`}>
+               <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-4 px-6 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-full text-sm font-medium shadow-md hover:shadow-lg">
               Learn More
             </button>
+            </Link>
+         
           </div>
 
           {/* Decorative elements */}
