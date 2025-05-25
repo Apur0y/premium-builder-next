@@ -9,14 +9,14 @@ export default async function Home({searchParams} :{searchParams: Promise<{query
 
   const posts =[
     {
-      createdAt: "2023-10-01",
+      createdAt: new Date(),
       title: "Divine Robotics",
       description: "This is a brief description of startup idea 1.",
       views: 10,
       _id:1,
-      author:{_id:1},
+      author:{_id:1, name:"John Doe"},
       category: "Robots",
-      image:"https://www.cio.com/wp-content/uploads/2025/02/3829539-0-75501800-1740132217-shutterstock_2482705481.jpg?resize=1536%2C864&quality=50&strip=all"
+      image:"https://mecaluxcom.cdnwm.com/img/logistics-articles/advancements-humanoid-robots-simulations.1.11.jpg"
     }
   ]
 
@@ -41,7 +41,7 @@ export default async function Home({searchParams} :{searchParams: Promise<{query
       <ul>
         {
           posts.length>0 ?(
-            posts.map((post:StractupCardType, index:number)=>(
+            posts.map((post, index:number)=>(
               <StartupCard key={post?._id} post={post}></StartupCard>
             ))):(
               <p>No Startup Found</p>

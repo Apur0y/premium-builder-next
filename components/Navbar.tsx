@@ -9,7 +9,7 @@ async function Navbar() {
   return (
     <header className="bg-white text-black p-4 font-work-sans">
       <nav className="container mx-auto flex justify-between items-center">
-        <Link className="font-bold" href="/">BuilderMe</Link>
+        <Link className="font-bold" href="/">BuilderZ</Link>
 
         <div >
           {session && session?.user ? (
