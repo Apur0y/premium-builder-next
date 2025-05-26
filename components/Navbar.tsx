@@ -1,10 +1,13 @@
 import { auth, signIn, signOut } from "@/auth";
+import { GithubIcon } from "lucide-react";
+
 import Link from "next/link";
 
 import React from "react";
 
 async function Navbar() {
   const session = await auth();
+  // const session = useSession();
 
   return (
     <header className="bg-purple-700 text-white p-4 font-work-sans fixed z-50 w-full">
@@ -54,7 +57,7 @@ async function Navbar() {
                 await signIn("github");
               }}
             >
-              <button type="submit">Signin with GitHub</button>
+              <button className="flex bg-gray-800 py-1 px-3 rounded-lg" type="submit"><GithubIcon></GithubIcon> GitHub</button>
             </form>
           )}
         </div>

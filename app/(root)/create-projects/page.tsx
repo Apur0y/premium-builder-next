@@ -1,12 +1,11 @@
-
-
 'use client';
 import { insertData } from '@/app/action/insert';
 import React from 'react';
+import toast from 'react-hot-toast';
 
-const page = async() => {
+const page = () => {
 
-  const handleSubmit=async(e:any)=>{
+  const handleSubmit=(e:any)=>{
     e.preventDefault();
     const data = e.target;
     const title = data.title.value;
@@ -21,8 +20,13 @@ const page = async() => {
       image,
       price
     }
-       await insertData(projectData)
-
+      insertData(projectData).then(res => {
+        if(res && res.acknowledged){
+          toast.success("Project created successfully");
+          data.reset();
+        }
+      });
+    
   }
 
   

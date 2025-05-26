@@ -8,6 +8,7 @@ interface Params {
 const page = async({ params }: { params: Params }) => {
 
    const p =await params;
+   
      const serviceCollection =await dbConnect("services");
      const serviceData = await serviceCollection.findOne({_id :new ObjectId(p.id)});
 

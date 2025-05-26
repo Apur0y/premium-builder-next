@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { monsterrat } from './fonts'
 
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en" >
       <body className={monsterrat.className}>
         <div>{children}</div>
+         <Toaster />
       </body>
     </html>
   )
