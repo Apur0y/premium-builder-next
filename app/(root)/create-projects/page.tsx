@@ -1,37 +1,102 @@
-import dbConnect from '@/lib/dbConnect';
+"use client"
 import React from 'react';
 
 const page = async() => {
 
-  const dataType = dbConnect("items");
-  const data =await dataType.find({}).toArray()
+  const handleSubmit=(e:any)=>{
+    e.preventDefault();
+    const data = e.target;
+    const title = data.title.value;
+    const description = data.description.value;
+    const category = data.category.value;
+    const image = data.image.value;
+    const price = data.price.value;
+    const projectData = {
+      title,
+      description,
+      category,
+      image,
+      price
+    }
+    console.log(projectData);
+
+  }
+
+  
  
     return (
-        <div className='pt-24'>
-          {
-            data.map((item: any) => (
-              <div key={item._id} className="card  shadow-xl m-4">
-                    {item?.userName}
-              </div>
-            ))
-          }
-          <div className="hero bg-base-200 min-h-screen text-white">
-  <div className="hero-content flex-col lg:flex-row-reverse">
-        
-    <div className="card bg-pink-900 w-full max-w-sm shrink-0 shadow-2xl">
-      <div className="card-body">
-        <fieldset className="fieldset">
-          <label className="label">Email</label>
-          <input type="email" className="input" placeholder="Email" />
-          <label className="label">Password</label>
-          <input type="password" className="input" placeholder="Password" />
-          <div><a className="link link-hover">Forgot password?</a></div>
-          <button className="btn btn-neutral mt-4">Login</button>
-        </fieldset>
+        <div className=''>
+          
+      <section className='flex justify-center w-full py-12 bg-gray-50'>
+  <form action="" onSubmit={handleSubmit} className='flex flex-col w-full max-w-2xl p-8 space-y-6 bg-white rounded-xl shadow-md'>
+    <h2 className='text-3xl font-bold text-gray-800 mb-2'>Project Details</h2>
+    <p className='text-gray-600 mb-6'>Fill in the details of your project</p>
+    
+    <div className='space-y-2'>
+      <label htmlFor="title" className='block text-sm font-medium text-gray-700'>Name</label>
+      <input
+        type="text"
+        id="title"
+        name='title'
+        placeholder='Project Title'
+        className='w-full py-3 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200'
+      />
+    </div>
+    
+    <div className='space-y-2'>
+      <label htmlFor="description" className='block text-sm font-medium text-gray-700'>Description</label>
+      <textarea
+        id="description"
+        name="description"
+       
+        placeholder='Project Description'
+        className='w-full py-3 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200'
+      ></textarea>
+    </div>
+    
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+      <div className='space-y-2'>
+        <label htmlFor="category" className='block text-sm font-medium text-gray-700'>Category</label>
+        <input
+          type="text"
+          id="category"
+          name='category'
+          placeholder='Project Category'
+          className='w-full py-3 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200'
+        />
+      </div>
+      
+      <div className='space-y-2'>
+        <label htmlFor="price" className='block text-sm font-medium text-gray-700'>Price ($)</label>
+        <input
+          type="number"
+          id="price"
+          placeholder='Project Price'
+          name='price'
+          className='w-full py-3 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200'
+        />
       </div>
     </div>
-  </div>
-</div>
+    
+    <div className='space-y-2'>
+      <label htmlFor="image" className='block text-sm font-medium text-gray-700'>Image URL</label>
+      <input
+        type="text"
+        id="image"
+        name='image' 
+        placeholder='Project Image URL'
+        className='w-full py-3 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200'
+      />
+    </div>
+    
+    <button
+      type="submit"
+      className='w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
+    >
+      Submit Project
+    </button>
+  </form>
+</section>
         </div>
     );
 };

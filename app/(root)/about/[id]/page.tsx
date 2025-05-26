@@ -14,7 +14,7 @@ const page = async({ params }: { params: Params }) => {
     return (
         <div>
             
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section className="max-w-6xl  mx-auto px-4 sm:px-6 lg:px-8 py-12 z-10">
   {/* Hero Image with Gradient Overlay */}
   <div className="relative rounded-2xl overflow-hidden shadow-xl mb-8 group">
     <img 

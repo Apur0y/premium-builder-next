@@ -7,7 +7,7 @@ async function Navbar() {
   const session = await auth();
 
   return (
-    <header className="bg-white text-black p-4 font-work-sans fixed w-full">
+    <header className="bg-purple-700 text-white p-4 font-work-sans fixed z-50 w-full">
       <nav className="container mx-auto flex justify-between items-center">
         <Link className="font-bold" href="/">BuilderZ</Link>
 
