@@ -1,9 +1,12 @@
-"use client"
+
+
+'use client';
+import { insertData } from '@/app/action/insert';
 import React from 'react';
 
 const page = async() => {
 
-  const handleSubmit=(e:any)=>{
+  const handleSubmit=async(e:any)=>{
     e.preventDefault();
     const data = e.target;
     const title = data.title.value;
@@ -18,7 +21,7 @@ const page = async() => {
       image,
       price
     }
-    console.log(projectData);
+       await insertData(projectData)
 
   }
 
