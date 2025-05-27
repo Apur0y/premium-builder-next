@@ -36,9 +36,9 @@ export async function queryPdfWithAI(
       If the answer cannot be found in the context, please say so.
       
       Context:
-      {context}
+      ${context}
       
-      Question: {question}
+      Question: ${question}
       
       Answer:
     `);

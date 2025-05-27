@@ -19,17 +19,17 @@ export default function PdfReader() {
     
     setLoading(true);
     try {
-      const response = await fetch('/api/query-pdf', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          question,
-          userId: 'user123', // Replace with actual user ID
-          fileKey: selectedFile?.key || null
-        }),
-      });
+   const response = await fetch('/api/process-pdf/query-pdf', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    question,
+    userId: 'user123',
+    fileKey: selectedFile?.key || null
+  }),
+});
       
       const data = await response.json();
       setAnswer(data.answer);
