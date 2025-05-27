@@ -1,5 +1,5 @@
 import { auth, signIn, signOut } from "@/auth";
-import { GithubIcon, Upload } from "lucide-react";
+import { GithubIcon, Reply, Upload } from "lucide-react";
 
 import Link from "next/link";
 
@@ -26,6 +26,9 @@ async function Navbar() {
               </Link>
              <Link className="flex bg-slate-800 py-1 px-3 rounded-lg gap-2" href="/upload">
               Upload<Upload></Upload> 
+              </Link>
+             <Link className="flex bg-slate-800 py-1 px-3 rounded-lg gap-2" href="/reply">
+              Reply <Reply></Reply>
               </Link>
         </div>
 
