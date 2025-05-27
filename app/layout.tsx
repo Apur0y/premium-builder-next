@@ -3,6 +3,9 @@ import { monsterrat } from './fonts'
 
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "./api/uploadthing/core";
 
 
 export const metadata: Metadata = {
@@ -14,6 +17,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" >
       <body className={monsterrat.className}>
+             <NextSSRPlugin
+          
+          routerConfig={extractRouterConfig(ourFileRouter)}
+        />
         <div>{children}</div>
          <Toaster />
       </body>

@@ -7,12 +7,7 @@ const f =createUploadthing();
 const auth = (req:Request)=>({id: "userId"});
 
 export const ourFileRouter={
-    // imageUploader:f({
-    //     image:{
-    //         maxFileSize:"4MB",
-    //         maxFileCount:1,
-    //     }
-    // })
+
      pdfUploader: f({ pdf: { maxFileSize: "4MB" } })
 
 
@@ -30,6 +25,8 @@ export const ourFileRouter={
       
       console.log("Upload complete for userId:", metadata.userId);
       console.log("file url", file.ufsUrl);
+
+      
   
       return { uploadedBy: metadata.userId };
     }),
