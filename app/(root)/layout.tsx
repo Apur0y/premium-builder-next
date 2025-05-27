@@ -6,7 +6,7 @@ export default function Layout({
   return (
     <main className="font-work-sans ">
       <Navbar></Navbar>
-      <div className="pt-24">{children}</div>
+      <div className="pt-16">{children}</div>
     </main>
   );
 }

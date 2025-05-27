@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss";
 import daisyui from "daisyui";
+import { withUt } from "uploadthing/tw";
 
-export default {
+export default withUt({
     darkMode: ["class"],
     content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -60,4 +61,4 @@ export default {
   	}
   },
   plugins: [daisyui],
-} satisfies Config;
+}) satisfies Config;
