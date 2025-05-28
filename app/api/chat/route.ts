@@ -11,7 +11,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ message: 'Message is required' }, { status: 400 });
     }
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+    const model = genAI.getGenerativeModel({ 
+      model: 'gemini-2.0-flash',
+    
+    });
 
     const chat = model.startChat({
       history: history.map(msg => ({
@@ -23,6 +26,7 @@ export async function POST(request: NextRequest) {
     const result = await chat.sendMessage(message);
     const response = await result.response;
     const text = response.text();
+    console.log(text);
 
     return NextResponse.json({ 
       message: text,
