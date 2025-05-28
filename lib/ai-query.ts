@@ -6,7 +6,7 @@ import { embeddings, pinecone } from "@/app/api/process-pdf/route";
 
 
 const llm = new ChatGoogleGenerativeAI({
-  model: "gemini-pro",
+  model: "gemini-2.0-flash",
   apiKey: process.env.GEMINI_API_KEY ?? "",
   temperature: 0.7,
 });
@@ -29,6 +29,8 @@ export async function queryPdfWithAI(
       k: 4, // Number of relevant chunks to retrieve
       filter: fileKey ? { fileKey: { $eq: fileKey } } : undefined
     });
+
+    const context ="What is the phone Number?"
     
     // 3. Create prompt template
     const prompt = PromptTemplate.fromTemplate(`

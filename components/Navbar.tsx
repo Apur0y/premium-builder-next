@@ -18,7 +18,7 @@ async function Navbar() {
              <Link href="/create-projects">
               Create Project
               </Link>
-             <Link href="/create-projects">
+             <Link href="/ai-chat">
               Find One
               </Link>
              <Link href="/about">

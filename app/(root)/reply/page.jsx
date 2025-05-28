@@ -19,7 +19,8 @@ export default function PdfReader() {
     
     setLoading(true);
     try {
-   const response = await fetch('/api/process-pdf/query-pdf', {
+      console.log();
+   const response = await fetch('/api/process-pdf', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
